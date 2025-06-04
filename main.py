@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "FastAPI is running!"}
+    return {"message": "FastAPI is running successfully!"}
 
 @app.get("/api/jobs")
 def get_remoteok_jobs():
