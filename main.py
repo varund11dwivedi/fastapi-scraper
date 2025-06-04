@@ -4,18 +4,16 @@ from bs4 import BeautifulSoup
 
 app = FastAPI()
 
-# Root endpoint to verify deployment
 @app.get("/")
-def read_root():
+def root():
     return {"message": "FastAPI is running!"}
 
-# Actual scraping endpoint
 @app.get("/api/jobs")
 def get_remoteok_jobs():
     url = 'https://remoteok.io/remote-dev-jobs'
     headers = {'User-Agent': 'Mozilla/5.0'}
     response = requests.get(url, headers=headers)
-    
+
     if response.status_code != 200:
         return {"error": "Failed to fetch jobs"}
 
