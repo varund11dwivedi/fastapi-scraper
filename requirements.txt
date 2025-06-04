@@ -1,10 +1,4 @@
 fastapi
 uvicorn
+requests
 beautifulsoup4
-codex/find-issues-and-propose-fixes
-
-httpx
-pytest
-
-httpx
- main
