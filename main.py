@@ -4,6 +4,12 @@ from bs4 import BeautifulSoup
 
 app = FastAPI()
 
+# Root endpoint to verify deployment
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI is running!"}
+
+# Actual scraping endpoint
 @app.get("/api/jobs")
 def get_remoteok_jobs():
     url = 'https://remoteok.io/remote-dev-jobs'
