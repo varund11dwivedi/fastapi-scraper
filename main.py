@@ -1,4 +1,7 @@
 from fastapi import FastAPI
+\codex/find-issues-and-propose-fixes
+import httpx
+\main
 from bs4 import BeautifulSoup
 from typing import List, Dict
 import httpx
@@ -95,9 +98,13 @@ async def get_jobs():
                     jobs.append(
                         {
                             "source": "SkipTheDrive",
+\codex/find-issues-and-propose-fixes
+                            "company": company.get_text(strip=True) if company else "",
+\
                             "company": company.get_text(strip=True)
                             if company
                             else "",
+\main
                             "position": title.get_text(strip=True) if title else "",
                             "job_link": job_link_tag["href"],
                         }
